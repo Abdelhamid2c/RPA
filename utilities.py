@@ -3,8 +3,8 @@ from openpyxl.styles import Font
 import pandas as pd
 
 def add_comment(old_value, new_value):
-    old_text = "(None)" if pd.isna(old_value) else str(old_value)
-    new_text = "(None)" if pd.isna(new_value) else str(new_value)
+    old_text = "(None)" if old_value == 'NAN' else str(old_value)
+    new_text = "(None)" if new_value == 'NAN' else str(new_value)
     comment_text = f"Previous: {old_text}\nNew: {new_text}"
     # print(comment_text+'\n')
     return comment_text
